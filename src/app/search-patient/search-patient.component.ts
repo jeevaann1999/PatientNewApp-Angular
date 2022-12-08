@@ -7,13 +7,13 @@ import { ApiService } from '../api.service';
   styleUrls: ['./search-patient.component.css']
 })
 export class SearchPatientComponent {
-  patientid=""
+  patientName=""
   searchData:any=[]
 constructor(private api:ApiService){}
 
 readValues=()=>{
   let data:any={
-    "patientid":this.patientid
+    "patientName":this.patientName
   }
   console.log(data)
   this.api.searchPatients(data).subscribe(
@@ -24,6 +24,14 @@ readValues=()=>{
       } else {
         this.searchData=response
       }
+    }
+  )
+}
+deleteBtnClick=(patientName:any)=>{
+  let data:any={"patientName":patientName}
+  this.api.deletePatients(data).subscribe(
+    (response:any)=>{
+      console.log(response)
     }
   )
 }
