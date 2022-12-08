@@ -32,7 +32,13 @@ deleteBtnClick=(patientName:any)=>{
   this.api.deletePatients(data).subscribe(
     (response:any)=>{
       console.log(response)
+      if (response.status=="success") {
+        alert("Deleted Successfully")
+      } else {
+        alert("Something went wrong")
+      }
     }
+
   )
 }
 }
