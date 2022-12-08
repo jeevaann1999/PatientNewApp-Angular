@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row mt-4 g-3">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <label for="" class="form-label">Patient ID</label>
+            <input name="patientid"[(ngModel)]="patientid" type="text" class="form-control">
+        </div>
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+            <button (click)="readValues()" class="btn btn-success">Search</button>
+        </div>
+    </div>
+    <div class="row" *ngFor="let i of searchData">
+        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+            <label for="" class="form-label">Patient Name</label>
+            <input type="text" class="form-control" value="{{i.patientName}}">
+        </div>
+        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+            <label for="" class="form-label">Patient ID</label>
+            <input type="text" class="form-control" value="{{i.patientid}}">
+        </div>
+        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+            <label for="" class="form-label">Address</label>
+            <input type="text" class="form-control" value="{{i.address}}">
+        </div>
+        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+            <label for="" class="form-label">Contact Number</label>
+            <input type="text" class="form-control" value="{{i.contactNo}}">
+        </div>
+        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+            <label for="" class="form-label">Date of Appointment</label>
+            <input type="text" class="form-control" value="{{i.dateofAppoint}}">
+        </div>
+        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+            <label for="" class="form-label">Doctor's Name</label>
+            <input type="text" class="form-control" value="{{i.doctorName}}">
+        </div>
+    </div>
+</div>
